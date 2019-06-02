@@ -1,0 +1,23 @@
+<table>
+    <thead>
+        <td>
+            Name
+        </td>
+        <td>
+            Address
+        </td>
+        <td (click)="addCustomer()">
+            +
+        </td>
+    </thead>
+    <tbody>
+        <tr *ngFor=" let customer of customers; let i=index">
+            <td>{{customer.name}}</td>
+            <td>{{customer.address}}</td>
+
+            <td class="actions">
+                <div class="rotated" (click)="deleteCustomer(customer._id)">...</div>
+            </td>
+        </tr>
+    </tbody>
+</table>

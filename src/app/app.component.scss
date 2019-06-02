@@ -1,0 +1,19 @@
+.app-layout {
+  display: flex;
+  min-width: 100%;
+  min-height: 100%;
+  flex-direction: column;
+  height: -webkit-fill-available;
+}
+
+.header {
+  background-color: #188a98;
+  height: 60px;
+}
+
+.workspace {
+  background-color: white;
+  height: 100%;
+  min-height: 100%;
+  flex-grow: 1;
+}
