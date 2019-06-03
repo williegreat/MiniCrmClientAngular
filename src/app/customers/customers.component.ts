@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { CustomersService } from '../services/customers.service';
-import { Observable } from 'rxjs';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EditCustomerComponent } from './edit-customer/edit-customer.component';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-customers',
@@ -9,11 +11,12 @@ import { Observable } from 'rxjs';
 })
 export class CustomersComponent implements OnInit {
 
-    //customers: Array<Observable<any>> = new Array<Observable<any>>();
     customers;
+    selectedCustomer;
+    originalCustomer;
+    workMode = { editMode: false };
 
-    constructor(private customersService: CustomersService) {
-
+    constructor(private customersService: CustomersService, private router: Router) {
     }
 
     ngOnInit() {
@@ -21,13 +24,9 @@ export class CustomersComponent implements OnInit {
     }
 
     addCustomer() {
-        let name = prompt("Insert name");
-        let address = prompt("Insert address");
-
-        this.customersService.addCustomer({ name: name, address: address })
-            .subscribe((data: any) => {
-                this.customers = data;
-            });
+        this.originalCustomer = null;
+        this.selectedCustomer = {name : '', address:''};
+        this.workMode = { editMode: true };
     }
 
     loadCustomers() {
@@ -44,4 +43,34 @@ export class CustomersComponent implements OnInit {
             });
     }
 
+    editCustomer(customer) {
+        this.originalCustomer = { ...customer };
+        this.selectedCustomer = customer;
+        this.workMode = { editMode: true };
+    }
+
+    updateCustomer(customer) {
+        this.customersService.updateCustomer(customer)
+            .subscribe((data: any) => {
+                this.customers = data;
+            });
+    }
+
+    insertCustomer(customer) {
+        this.customersService.addCustomer(customer)
+            .subscribe((data: any) => {
+                this.customers = data;
+            });
+    }
+
+    resetChanges() {
+        if (this.originalCustomer) {
+            this.selectedCustomer.address = this.originalCustomer.address;
+            this.selectedCustomer.name = this.originalCustomer.name;
+        }
+    }
+
+    showOrders(customer) {
+        this.router.navigate(['/orders'], { queryParams: { customer: customer._id } });
+    }
 }

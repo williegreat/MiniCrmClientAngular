@@ -1,0 +1,35 @@
+<div *ngIf="workMode.editMode" class="flex align-center align-vert modal--show modal--align">
+  <div class="modal__container">
+
+    <div class="modal-header">
+      <h4>Edit Order</h4>
+    </div>
+
+    <div class="modal-body">
+      <div class="row">
+        <label class="label">CustomerId</label>
+        <input class="textbox" [(ngModel)]="order.customerId" />
+      </div>
+
+      <div class="row">
+        <label class="label">OrderId</label>
+        <input class="textbox" [(ngModel)]="order.orderId" />
+      </div>
+
+      <div class="row">
+        <label class="label">Description</label>
+        <input class="textbox" [(ngModel)]="order.description" />
+      </div>
+
+      <div class="row">
+        <label class="label">Quantity</label>
+        <input class="textbox" [(ngModel)]="order.quantity" />
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button (click)="saveChanges()">Save</button>
+      <button (click)="cancelChanges()">Cancel</button>
+    </div>
+  </div>
+</div>

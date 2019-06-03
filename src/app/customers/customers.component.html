@@ -1,3 +1,5 @@
+<h2>CUSTOMERS</h2>
+
 <table>
     <thead>
         <td>
@@ -9,6 +11,13 @@
         <td (click)="addCustomer()">
             +
         </td>
+        <td>
+            Edit
+        </td>
+
+        <td>
+            Orders
+        </td>
     </thead>
     <tbody>
         <tr *ngFor=" let customer of customers; let i=index">
@@ -18,6 +27,16 @@
             <td class="actions">
                 <div class="rotated" (click)="deleteCustomer(customer._id)">...</div>
             </td>
+            <td>
+                <button (click)="editCustomer(customer)">Edit</button>
+            </td>
+            <td>
+                <button (click)="showOrders(customer)">Orders</button>
+            </td>
         </tr>
     </tbody>
 </table>
+
+<app-edit-customer [customer]="selectedCustomer" [workMode]="workMode"
+    [updateAction]="originalCustomer ? updateCustomer.bind(this) : insertCustomer.bind(this)"
+    [resetAction]="resetChanges.bind(this)"></app-edit-customer>

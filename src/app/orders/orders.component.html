@@ -1,3 +1,47 @@
-<div class="orders">
-    Orders
+<div>
+    <h2>ORDERS</h2>
+    <h4 *ngIf="customer">
+        Customer Name : {{customer}}
+    </h4>
 </div>
+
+<table>
+    <thead>
+        <td>
+            Customer
+        </td>
+        <td>
+            Order
+        </td>
+        <td>
+            Quantity
+        </td>
+        <td>
+            Description
+        </td>
+        <td>
+            Edit
+        </td>
+        <td (click)="addOrder()">
+            +
+        </td>
+    </thead>
+    <tbody>
+        <tr *ngFor=" let order of orders; let i=index">
+            <td>{{order.customerId}}</td>
+            <td>{{order.orderId}}</td>
+            <td>{{order.description}}</td>
+            <td>{{order.quantity}}</td>
+            <td>
+                <button (click)="editOrder(order)">Edit</button>
+            </td>
+            <td>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<app-edit-order [order]="selectedOrder" [workMode]="workMode"
+    [updateAction]="originalOrder ? updateOrder.bind(this) : insertOrder.bind(this)"
+    [resetAction]="resetChanges.bind(this)">
+</app-edit-order>
