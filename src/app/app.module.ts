@@ -16,6 +16,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuComponent } from './shared/context-menu/context-menu.component';
 import { EditOrderComponent } from './modules/orders/edit-order/edit-order.component';
+import { EditComponentComponent } from './shared/edit-component/edit-component.component';
 
 @NgModule({
     declarations: [
@@ -27,7 +28,8 @@ import { EditOrderComponent } from './modules/orders/edit-order/edit-order.compo
         AnalysisComponent,
         EditCustomerComponent,
         ContextMenuComponent,
-        EditOrderComponent
+        EditOrderComponent,
+        EditComponentComponent
     ],
     imports: [
         BrowserModule,
