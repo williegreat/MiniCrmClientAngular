@@ -1,5 +1,5 @@
 import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
-import { CustomersService } from '../services/customers.service';
+import { CustomersService } from './customers.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { Router } from '@angular/router';

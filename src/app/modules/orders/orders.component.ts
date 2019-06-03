@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { OrdersService } from '../services/orders.service';
+import { OrdersService } from './orders.service';
 import io from 'socket.io-client';
 import { Router, ActivatedRoute } from '@angular/router';
 

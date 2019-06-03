@@ -5,17 +5,17 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { WorkspaceComponent } from './workspace/workspace.component';
-import { OrdersComponent } from './orders/orders.component';
-import { CustomersComponent } from './customers/customers.component';
-import { AnalysisComponent } from './analysis/analysis.component';
-import { OrdersService } from './services/orders.service';
-import { EditCustomerComponent } from './customers/edit-customer/edit-customer.component';
+import { HeaderComponent } from './modules/layout/header/header.component';
+import { WorkspaceComponent } from './modules/layout/workspace/workspace.component';
+import { OrdersComponent } from './modules/orders/orders.component';
+import { CustomersComponent } from './modules/customers/customers.component';
+import { AnalysisComponent } from './modules/analysis/analysis.component';
+import { OrdersService } from './modules/orders/orders.service';
+import { EditCustomerComponent } from './modules/customers/edit-customer/edit-customer.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ContextMenuComponent } from './shared/context-menu/context-menu.component';
-import { EditOrderComponent } from './orders/edit-order/edit-order.component';
+import { EditOrderComponent } from './modules/orders/edit-order/edit-order.component';
 
 @NgModule({
     declarations: [
