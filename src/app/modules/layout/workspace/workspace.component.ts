@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Route, NavigationStart, NavigationEnd, NavigationError } from '@angular/router';
 
+
+/**
+ *  TODO : Add loading indicators.
+ *
+ * @export
+ * @class WorkspaceComponent
+ * @implements {OnInit}
+ */
 @Component({
     selector: 'app-workspace',
     templateUrl: './workspace.component.html',
@@ -33,5 +41,4 @@ export class WorkspaceComponent implements OnInit {
     ngOnInit() {
 
     }
-
 }
