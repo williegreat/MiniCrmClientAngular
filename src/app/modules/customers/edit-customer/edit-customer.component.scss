@@ -51,7 +51,6 @@
     display: flex;
     justify-content: flex-end;
     margin-top: 5px;
-    
   }
 
   button {
@@ -69,20 +68,17 @@
 }
 
 .row {
-    display: flex;
-    margin: 5px;
+  display: flex;
+  margin: 5px;
+  height: 15px;
+
+  .label {
     height: 15px;
-    
+    min-width: 150px;
+    width: 150px;
+  }
 
-    .label {
-        height: 15px;
-        min-width: 150px;
-        width:150px;
-    }
-
-    .textbox {
-        height: 15px;
-    }
+  .textbox {
+    height: 15px;
+  }
 }
-
-

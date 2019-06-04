@@ -1,7 +1,5 @@
 import { Component, OnInit, SimpleChanges, OnChanges } from '@angular/core';
 import { CustomersService } from './customers.service';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EditCustomerComponent } from './edit-customer/edit-customer.component';
 import { Router } from '@angular/router';
 
 @Component({
@@ -25,7 +23,7 @@ export class CustomersComponent implements OnInit {
 
     addCustomer() {
         this.originalCustomer = null;
-        this.selectedCustomer = {name : '', address:''};
+        this.selectedCustomer = { name: '', address: '' };
         this.workMode = { editMode: true };
     }
 

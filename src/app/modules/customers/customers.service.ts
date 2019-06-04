@@ -1,6 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+
+/**
+ * TODO : Remove hardcoded URLs - move to constants, create one function for options & headers
+ *
+ * @export
+ * @class CustomersService
+ */
 @Injectable({
     providedIn: 'root'
 })

@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
+/**
+ * TODO : Remove hardcoded URLs - move to constants, create one function for options & headers
+ *
+ * @export
+ * @class OrdersService
+ */
 @Injectable({
     providedIn: 'root'
 })
+
 export class OrdersService {
 
     constructor(private http: HttpClient) {
@@ -19,7 +26,7 @@ export class OrdersService {
     }
 
     addOrder(order, customerId) {
-        return this.http.post('http://localhost:4200/api/orders', { 'order': order, 'customerId' : customerId });
+        return this.http.post('http://localhost:4200/api/orders', { 'order': order, 'customerId': customerId });
     }
 
     deleteOrder(id) {
@@ -39,6 +46,6 @@ export class OrdersService {
         let options = {
             headers: headers
         }
-        return this.http.put('http://localhost:4200/api/orders', { 'order': order, 'customerId' : customerId }, options);
+        return this.http.put('http://localhost:4200/api/orders', { 'order': order, 'customerId': customerId }, options);
     }
 }

@@ -2,28 +2,28 @@ import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/cor
 import { CustomersComponent } from '../customers.component';
 
 @Component({
-  selector: 'app-edit-customer',
-  templateUrl: './edit-customer.component.html',
-  styleUrls: ['./edit-customer.component.scss']
+    selector: 'app-edit-customer',
+    templateUrl: './edit-customer.component.html',
+    styleUrls: ['./edit-customer.component.scss']
 })
 export class EditCustomerComponent {
 
-  @Input() customer;
-  @Input() workMode;
-  @Input() updateAction;
-  @Input() resetAction;
+    @Input() customer;
+    @Input() workMode;
+    @Input() updateAction;
+    @Input() resetAction;
 
-  constructor() { 
+    constructor() {
 
-  }
+    }
 
-  saveChanges() {
-    this.workMode = { editMode: false };
-    this.updateAction(this.customer);
-  }
+    saveChanges() {
+        this.workMode = { editMode: false };
+        this.updateAction(this.customer);
+    }
 
-  cancelChanges() {
-    this.workMode = { editMode: false };
-    this.resetAction();
-  }
+    cancelChanges() {
+        this.workMode = { editMode: false };
+        this.resetAction();
+    }
 }

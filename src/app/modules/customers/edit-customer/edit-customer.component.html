@@ -1,25 +1,25 @@
 <div *ngIf="workMode.editMode" class="flex align-center align-vert modal--show modal--align">
-  <div class="modal__container">
+    <div class="modal__container">
 
-    <div class="modal-header">
-      <h4>Edit Customer</h4>
-    </div>
+        <div class="modal-header">
+            <h4>Edit Customer</h4>
+        </div>
 
-    <div class="modal-body">
-      <div class="row">
-        <label class="label">Name</label>
-        <input class= "textbox" [(ngModel)]="customer.name" />
-      </div>
+        <div class="modal-body">
+            <div class="row">
+                <label class="label">Name</label>
+                <input class="textbox" [(ngModel)]="customer.name" />
+            </div>
 
-      <div class="row">
-          <label  class="label">Address</label>
-          <input class= "textbox" [(ngModel)]="customer.address" />
+            <div class="row">
+                <label class="label">Address</label>
+                <input class="textbox" [(ngModel)]="customer.address" />
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button (click)="saveChanges()">Save</button>
+            <button (click)="cancelChanges()">Cancel</button>
         </div>
     </div>
-
-    <div class="modal-footer">
-      <button (click)="saveChanges()">Save</button>
-      <button (click)="cancelChanges()">Cancel</button>
-    </div>
-  </div>
 </div>

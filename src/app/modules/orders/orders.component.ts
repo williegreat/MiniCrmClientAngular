@@ -32,7 +32,7 @@ export class OrdersComponent implements OnInit {
 
     addOrder() {
         this.originalOrder = null;
-        this.selectedOrder = { customerId: this.customer, orderId: '', quantity :0, description:'' };
+        this.selectedOrder = { customerId: this.customer, orderId: '', quantity: 0, description: '' };
         this.workMode = { editMode: true };
     }
 
